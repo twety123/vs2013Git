@@ -5,6 +5,7 @@ namespace firstMVC
 {
     public class BundleConfig
     {
+        //TODO:bundle 束，捆   定义css  js打包的规则
         // 有关 Bundling 的详细信息，请访问 http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
         {
