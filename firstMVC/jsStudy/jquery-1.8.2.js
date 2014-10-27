@@ -1,4 +1,5 @@
 ﻿/* NUGET: BEGIN LICENSE TEXT
+ * 微软程序包：声明文本开始
  *
  * Microsoft grants you the right to use these script files for the sole
  * purpose of either: (i) interacting through your browser with the Microsoft
@@ -28,40 +29,50 @@
 (function(window, undefined) {
 	var
 	// A central reference to the root jQuery(document)
-		rootjQuery,
+	//jquery文件的中心引用定义
+		rootjQuery, //jquery根引用
 
 		// The deferred used on DOM ready
+		//延期使用的dom对象准备完毕
 		readyList,
 
 		// Use the correct document accordingly with window argument (sandbox)
+		//根据窗口的内容使用正确的文件（沙盒）
 		document = window.document,
 		location = window.location,
-		navigator = window.navigator,
+		navigator = window.navigator, //导航
 
 		// Map over jQuery in case of overwrite
+		//jquery万一被重写后，确定对应关系
 		_jQuery = window.jQuery,
 
 		// Map over the $ in case of overwrite
+		//$符号万一被重写后，重新对应关系
 		_$ = window.$,
 
 		// Save a reference to some core methods
-		core_push = Array.prototype.push,
-		core_slice = Array.prototype.slice,
-		core_indexOf = Array.prototype.indexOf,
-		core_toString = Object.prototype.toString,
-		core_hasOwn = Object.prototype.hasOwnProperty,
-		core_trim = String.prototype.trim,
+		//保存一些核心方法的引用
+		core_push = Array.prototype.push, //推送？
+		core_slice = Array.prototype.slice, //切片？
+		core_indexOf = Array.prototype.indexOf, //索引位置
+		core_toString = Object.prototype.toString, //转换成字符串
+		core_hasOwn = Object.prototype.hasOwnProperty, //固有属性
+		core_trim = String.prototype.trim, //消除前后的空格
 
 		// Define a local copy of jQuery
-		jQuery = function(selector, context) {
+		//定义一个jquery的本地副本
+		jQuery = function(selector, context) { //选择器，文本
 			// The jQuery object is actually just the init constructor 'enhanced'
+			//jquery对象确定只是初始化结构“增大”？
 			return new jQuery.fn.init(selector, context, rootjQuery);
 		},
 
 		// Used for matching numbers
+		//正则表达用于匹配数字
 		core_pnum = /[\-+]?(?:\d*\.|)\d+(?:[eE][\-+]?\d+|)/.source,
 
 		// Used for detecting and trimming whitespace
+		//用于检测和整理空格
 		core_rnotwhite = /\S/,
 		core_rspace = /\s+/,
 
